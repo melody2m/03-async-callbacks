@@ -11,7 +11,7 @@ reader.readFileAsync = (path, callback) =>
     if (error) {
       throw callback(error);
     }
-    return callback(fileBuffer.toString('utf8'));
+    return callback(null, fileBuffer.toString('utf8'));
   });
 
 // function that prints text of an array of files, using above function
