@@ -33,7 +33,7 @@ const printText = (text) => {
 
 const completeMessage = () => {
   console.log('transmission complete');
-}
+};
 
 // main part
 
@@ -43,7 +43,7 @@ const readFileArrayAsync = (fileArray, currentIndex, callback) => {
   }
   const currentFilePath = fileArray[currentIndex];
   try {
-    return reader.readFileAsync(currentFilePath, (file) => {
+    return reader.readFileAsync(currentFilePath, (error, file) => {
       printText(file);
       readFileArrayAsync(fileArray, currentIndex + 1, callback);
     });
